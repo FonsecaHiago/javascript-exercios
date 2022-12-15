@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>Eleição</title>
+    <style>
+        body{
+            background: brown;
+            font: 20px Arial;
+            color: rgb(255, 255, 255);
+        }
+        div#res{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Checagem de obrigatoriedade de votação</h1>
+    Sua Idade: <input type="number" name="voto" id="voto" > 
+    <input type="button" value="Enviar" onclick="cedula()">
+    <div id="res"></div>
+
+    <script>
+        function cedula(){
+        var idade = document.querySelector('input#voto')
+        var res = document.querySelector('div#res')
+        var nu = Number(idade.value)
+        res.innerHTML = `A sua idade é de ${nu}`
+        if ( nu < 16) {
+            res.innerHTML = `A sua idade é de <strong>${nu} anos</strong> . Você não vota`
+        } else if ( nu < 18 || nu > 65) {
+            res.innerHTML = `A sua idade é de <strong>${nu} anos</strong> . Seu voto é opcional`
+        } else {
+            res.innerHTML = `A sua idade é de <strong>${nu} anos</strong> . Seu voto é obrigatório`
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>País De Origem</title>
+</head>
+<body>
+    <h1>Qual seu País ?</h1>
+    País: <input type="text" name="txtp" id="txtp">
+    <input type="button" value="Verificar" onclick="Somar()">
+    <div id="res"></div>
+
+
+
+    <script>
+        function Somar (){
+        var txtp = document.getElementsByClassName('txtp')
+        var res = document.getElementById('res')
+        var pais = document.getElementById('txtp.value')
+        var input = document.querySelector("#txtp");
+        var texto = input.value;
+
+        res.innerHTML = `Seu Pais atual é ${texto}`
+        if (texto == 'Brasil') {
+            res.innerHTML +=`<p>Voce é Brasileiro.</p>`
+        } else{
+            res.innerHTML += `<p>Voce é estrangeiro </p>`
+        }
+        
+}
+    </script>
+    
+</body>
+</html>
